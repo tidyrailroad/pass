@@ -11,4 +11,5 @@ RUN \
     make --directory ${WORK_DIR} install && \
     rm -rf ${WORK_DIR} && \
     apk del make
+ENV GPG_TTY="/dev/console"
 ENTRYPOINT ["pass"]
