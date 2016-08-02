@@ -9,7 +9,7 @@ RUN \
     git -C ${WORK_DIR} fetch origin && \
     git -C ${WORK_DIR} checkout tags/1.6.5 && \
     make --directory ${WORK_DIR} install && \
-    rm --recursive --force ${WORK_DIR} && \
+    rm -rf ${WORK_DIR} && \
     apk del make && \
     apk cache -v sync
 ENTRYPOINT /opt/pass
