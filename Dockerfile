@@ -2,7 +2,7 @@ FROM alpine:3.4
 RUN \
     apk update && \
     apk upgrade && \
-    apk add git make bash && \
+    apk add git make bash gnupg findutils openssh tree pwgen && \
     WORK_DIR=$(mktemp -d) && \
     git -C ${WORK_DIR} init && \
     git -C ${WORK_DIR} remote add origin https://git.zx2c4.com/password-store && \
@@ -11,4 +11,5 @@ RUN \
     make --directory ${WORK_DIR} install && \
     rm -rf ${WORK_DIR} && \
     apk del make
-ENTRYPOINT ["pass"]
+ENV GPG_TTY="/dev/console"
+ENTRYPOINT ["bash"]
