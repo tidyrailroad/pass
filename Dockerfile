@@ -3,11 +3,13 @@ RUN \
     apk update && \
     apk upgrade && \
     apk add git && \
-    mkdir /opt && \
-    mkdir /opt/pass && \
-    git -C /opt/pass init && \
-    git -C /opt/pass remote add origin https://git.zx2c4.com/password-store && \
-    git fetch origin tags/1.6.5 && \
-    git checkout tags/1.6.5 && \
+    WORK_DIR=$(mktemp -d) && \
+    git -C ${WORK_DIR} init && \
+    git -C ${WORK_DIR} remote add origin https://git.zx2c4.com/password-store && \
+    git -C ${WORK_DIR} fetch origin tags/1.6.5 && \
+    git -C ${WORK_DIR} checkout tags/1.6.5 && \
+    git -C ${WORK_DIR} archive master | tar -x -C /opt/pass/bin && \
+    make --directory ${WORK_DIR} install && \
+    rm --recursive --force ${WORK_DIR} && \
     apk cache -v sync
 ENTRYPOINT /opt/pass
