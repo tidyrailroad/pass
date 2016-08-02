@@ -6,7 +6,7 @@ RUN \
     WORK_DIR=$(mktemp -d) && \
     git -C ${WORK_DIR} init && \
     git -C ${WORK_DIR} remote add origin https://git.zx2c4.com/password-store && \
-    git -C ${WORK_DIR} fetch origin tags/1.6.5 && \
+    git -C ${WORK_DIR} fetch origin && \
     git -C ${WORK_DIR} checkout tags/1.6.5 && \
     git -C ${WORK_DIR} archive master | tar -x -C /opt/pass/bin && \
     make --directory ${WORK_DIR} install && \
