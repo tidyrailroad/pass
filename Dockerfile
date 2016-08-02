@@ -11,5 +11,5 @@ RUN \
     make --directory ${WORK_DIR} install && \
     rm -rf ${WORK_DIR} && \
     apk del make && \
-    apk cache -v sync
+    apk cache clean
 ENTRYPOINT /opt/pass
