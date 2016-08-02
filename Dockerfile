@@ -11,4 +11,4 @@ RUN \
     make --directory ${WORK_DIR} install && \
     rm -rf ${WORK_DIR} && \
     apk del make
-ENTRYPOINT pass
+ENTRYPOINT ["pass"]
