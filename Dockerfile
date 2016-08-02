@@ -10,6 +10,5 @@ RUN \
     git -C ${WORK_DIR} checkout tags/1.6.5 && \
     make --directory ${WORK_DIR} install && \
     rm -rf ${WORK_DIR} && \
-    apk del make && \
-    apk cache clean
+    apk del make
 ENTRYPOINT /opt/pass
