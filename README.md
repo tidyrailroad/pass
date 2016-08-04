@@ -74,15 +74,15 @@ The 4 listed commands are just some of the commands from the pass application.
 They have been tested and basically work.
 Other commands have not been tested and may or may not work.
 
-## Clipboard
+### Clipboard
 The `pass generate` and `pass show` command have `--clipboard` options which copies the password to the clipboard rather than showing it on the console.
 This has not been tested and is believed to not work.
 
-## ENTRYPOINT `pass` versus `bash`
+### ENTRYPOINT `pass` versus `bash`
 I am undecided about what the entrypoint should be.
 In this preliminary version it is `bash` for ease of debugging.
 
-### `pass`
+#### `pass`
 The most logical entrypoint is `pass`.
 Then users could create an alias `pass` for the docker run command and it would be as if they had installed pass on their system.
 However, one of the features of pass is that it briefly remembers your GPG passphrase.
@@ -97,7 +97,7 @@ However, one of the features of pass is that it briefly remembers your GPG passp
 
 If the entrypoint is `pass` then each invocation of the app will start a fresh container which will not remember the passphrase.
 
-### `bash`
+#### `bash`
 This solves the remember passphrase problem but it destroys the effect of running an application.
 Running the image does not run the application.
 Instead it creates a terminal where the user can run the application.
