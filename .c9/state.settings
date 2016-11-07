@@ -141,13 +141,15 @@
             ]
         }
     },
+    "recentfiles": {
+        "json()": []
+    },
     "tabs": {
         "json()": {
             "focus": "/Dockerfile",
             "meta": {
                 "accessList": [
                     "tab3",
-                    "tab5",
                     "tab4",
                     "tab0"
                 ]
@@ -185,7 +187,7 @@
                     "document": {
                         "changed": false,
                         "meta": {
-                            "timestamp": 1478516455406
+                            "timestamp": 1478516476938
                         },
                         "filter": true,
                         "title": "Dockerfile",
@@ -210,27 +212,6 @@
                         "filter": true,
                         "title": "run.sh",
                         "tooltip": "/run.sh",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab5",
-                    "path": "/entrypoint.sh",
-                    "className": [
-                        "changed",
-                        "tab5"
-                    ],
-                    "document": {
-                        "changed": true,
-                        "meta": {
-                            "timestamp": 1478516375871
-                        },
-                        "filter": true,
-                        "title": "entrypoint.sh",
-                        "tooltip": "/entrypoint.sh",
                         "ace": {}
                     },
                     "editorType": "ace",
