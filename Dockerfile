@@ -1,15 +1,6 @@
 FROM alpine:3.4
-RUN \
-    apk update && \
-    apk upgrade && \
-    apk add git make bash gnupg findutils openssh tree pwgen && \
-    WORK_DIR=$(mktemp -d) && \
-    git -C ${WORK_DIR} init && \
-    git -C ${WORK_DIR} remote add origin https://git.zx2c4.com/password-store && \
-    git -C ${WORK_DIR} fetch origin && \
-    git -C ${WORK_DIR} checkout tags/1.6.5 && \
-    make --directory ${WORK_DIR} install && \
-    rm -rf ${WORK_DIR} && \
-    apk del make
-ENV GPG_TTY="/dev/console"
-ENTRYPOINT ["bash"]
+MAINTAINER Emory Merryman emory.merryman@gmail.com
+COPY run.sh /opt/docker/
+RUN ["/bin/sh", "/opt/docker/run.sh"]
+ENTRYPOINT ["/usr/bin/pass"]
+CMD []
