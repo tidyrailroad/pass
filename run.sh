@@ -11,4 +11,5 @@ apk update &&
   make --directory ${WORK_DIR} install &&
   rm -rf ${WORK_DIR} &&
   apk del git make &&
+  apk add docker &&
   true
