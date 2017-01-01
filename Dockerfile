@@ -1,4 +1,4 @@
-FROM emorymerryman/base:0.03
+FROM emorymerryman/base:0.0.5
 MAINTAINER Emory Merryman emory.merryman@gmail.com
 RUN \
     apk update && \
