@@ -3,7 +3,7 @@ MAINTAINER Emory Merryman emory.merryman@gmail.com
 RUN \
     apk update && \
     apk upgrade && \
-    apk add git make bash && \
+    apk add git make bash openssh tree gpgme && \
     WORK_DIR=$(mktemp -d) && \
     git -C ${WORK_DIR} init && \
     git -C ${WORK_DIR} remote add origin https://github.com/furiousfox/password-store.git && \
